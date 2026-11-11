@@ -1,0 +1,177 @@
+.hero {
+  position: relative;
+  padding: 140px 0 80px;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 50% at 20% 30%, rgba(0,229,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroH1 {
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+.heroDesc {
+  max-width: 560px;
+}
+
+/* ─── Architecture ─────────────────────────────── */
+.architecture { background: var(--navy-800); }
+
+.archInner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.archLeft { position: sticky; top: 100px; }
+
+.archLayers {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.archLayer {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background var(--transition-fast);
+  cursor: default;
+}
+
+.archLayer:last-child { border-bottom: none; }
+.archLayer:hover { background: var(--border-subtle); margin: 0 -16px; padding-left: 16px; padding-right: 16px; border-radius: var(--radius-md); }
+
+.archLayerNum {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan-500);
+  font-weight: 600;
+}
+
+.archLayerLabel {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.archLayerBar {
+  width: 120px;
+  height: 3px;
+  background: var(--border-medium);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.archLayerFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan-500), var(--cyan-300));
+  border-radius: 2px;
+}
+
+/* ─── Capabilities ─────────────────────────────── */
+.capsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.capCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.capCard:hover {
+  border-color: var(--border-cyan);
+  transform: translateY(-2px);
+}
+
+.capIcon {
+  margin-bottom: 16px;
+  width: 28px;
+  height: 28px;
+}
+
+/* ─── Use Cases ────────────────────────────────── */
+.useCases { background: var(--navy-800); }
+
+.useCaseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.useCaseCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  transition: border-color var(--transition-base);
+}
+
+.useCaseCard:hover { border-color: var(--border-medium); }
+
+/* ─── Security ─────────────────────────────────── */
+.securityInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.securityBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.complianceBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0,214,143,0.06);
+  border: 1px solid rgba(0,214,143,0.2);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: border-color var(--transition-fast);
+}
+
+.complianceBadge:hover { border-color: rgba(0,214,143,0.4); }
+
+/* ─── CTA ──────────────────────────────────────── */
+.cta { background: var(--navy-800); }
+
+/* ─── Responsive ───────────────────────────────── */
+@media (max-width: 900px) {
+  .archInner { grid-template-columns: 1fr; gap: 40px; }
+  .archLeft { position: static; }
+  .archLayerBar { display: none; }
+  .capsGrid { grid-template-columns: 1fr 1fr; }
+  .useCaseGrid { grid-template-columns: 1fr; }
+  .securityInner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 600px) {
+  .capsGrid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,170 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: center;
+  background: #090D1A;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.5),
+    0 0 40px -10px rgba(37, 99, 235, 0.2);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.canvasContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvasHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.canvasBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38BDF8;
+  letter-spacing: 0.06em;
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hintText {
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+.svgCanvas {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: #040711;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.svgNode {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.svgNode:hover rect {
+  filter: brightness(1.2);
+}
+
+.svgNodeActive rect {
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
+}
+
+/* ── Telemetry Panel ── */
+.telemetryPanel {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.panelTag {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #94A3B8;
+  letter-spacing: 0.08em;
+}
+
+.panelStatus {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 0.68rem;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.nodeTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  letter-spacing: -0.01em;
+}
+
+.nodeRole {
+  font-size: 0.85rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.statsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  gap: 8px;
+}
+
+.statLabel {
+  color: #94A3B8;
+}
+
+.statValue {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-weight: 600;
+  color: #E2E8F0;
+  text-align: right;
+}
+
+.panelFoot {
+  font-size: 0.72rem;
+  color: #64748B;
+  font-family: var(--font-mono, 'DM Mono', monospace);
+}
